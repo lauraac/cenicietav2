@@ -40,9 +40,22 @@
   wa.value=localStorage.getItem('xvConfirmWhatsapp')||'';
   const clamp=()=>passes.value=Math.min(20,Math.max(1,parseInt(passes.value||1,10)));
   document.getElementById('minus').onclick=()=>{passes.value=+passes.value-1;clamp()}; document.getElementById('plus').onclick=()=>{passes.value=+passes.value+1;clamp()}; passes.onchange=clamp;
-  document.getElementById('generate').onclick=()=>{const f=family.value.trim(), w=wa.value.replace(/\D/g,'');clamp(); if(!f){alert('Escribe el nombre de la familia o invitado.');family.focus();return} if(w.length<10){alert('Escribe el WhatsApp que recibirá las confirmaciones, con código de país.');wa.focus();return} localStorage.setItem('xvConfirmWhatsapp',w); const u=new URL('index.html',location.href);u.searchParams.set('familia',f);u.searchParams.set('pases',passes.value);u.searchParams.set('wa',w);inviteUrl=u.href;document.getElementById('resultFamily').textContent=f;document.getElementById('resultPasses').textContent=`${passes.value} ${+passes.value===1?'Pase Real':'Pases Reales'}`;document.getElementById('urlPreview').textContent=inviteUrl;document.getElementById('result').classList.add('show')};
+  document.getElementById('generate').onclick=()=>{const f=family.value.trim(), w=wa.value.replace(/\D/g,'');clamp(); if(!f){alert('Escribe el nombre de la familia o invitado.');family.focus();return} if(w.length<10){alert('Escribe el WhatsApp que recibirá las confirmaciones, con código de país.');wa.focus();return} localStorage.setItem('xvConfirmWhatsapp',w); const u=new URL('./',location.href); u.searchParams.set('familia',f);u.searchParams.set('pases',passes.value);u.searchParams.set('wa',w);inviteUrl=u.href;document.getElementById('resultFamily').textContent=f;document.getElementById('resultPasses').textContent=`${passes.value} ${+passes.value===1?'Pase Real':'Pases Reales'}`;document.getElementById('urlPreview').textContent=inviteUrl;document.getElementById('result').classList.add('show')};
   document.getElementById('preview').onclick=()=>inviteUrl&&window.open(inviteUrl,'_blank','noopener');
   document.getElementById('copy').onclick=async()=>{if(!inviteUrl)return;await navigator.clipboard.writeText(inviteUrl);document.getElementById('copy').textContent='✓ Enlace copiado';setTimeout(()=>document.getElementById('copy').textContent='📋 Copiar enlace',1800)};
-  document.getElementById('share').onclick=()=>{if(!inviteUrl)return;const text=`✨ Tienes una invitación especial para los XV de María Luciana.\n\nAbre aquí tu invitación personalizada:\n${inviteUrl}`;window.open(`https://wa.me/?text=${encodeURIComponent(text)}`,'_blank','noopener')};
+ document.getElementById('share').onclick=()=>{
+  if(!inviteUrl)return;
+
+  const text=`✨ Tienes una invitación especial para los XV de María Luciana.
+
+💙 Toca la invitación para abrirla:
+${inviteUrl}`;
+
+  window.open(
+    `https://wa.me/?text=${encodeURIComponent(text)}`,
+    '_blank',
+    'noopener'
+  );
+};
 </script>
 </body></html>
