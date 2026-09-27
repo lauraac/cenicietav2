@@ -66,14 +66,32 @@ function initPersonalInvitation() {
     }
   }
 
-  openBtn?.addEventListener('click', () => {
-    envelope?.classList.add('is-open');
-    intro?.classList.remove('intro--waiting');
-    document.body.classList.remove('envelope-open');
-    const video = document.getElementById('introVideo');
-    video?.play().catch(() => {});
-    setTimeout(() => envelope?.remove(), 900);
-  });
+openBtn?.addEventListener('click', () => {
+
+  // Detener completamente el primer video
+  const welcomeVideo = document.getElementById('welcomeVideo');
+
+  if (welcomeVideo) {
+    welcomeVideo.pause();
+    welcomeVideo.currentTime = 0;
+    welcomeVideo.muted = true;
+  }
+
+  // Abrir la siguiente pantalla
+  envelope?.classList.add('is-open');
+  intro?.classList.remove('intro--waiting');
+  document.body.classList.remove('envelope-open');
+
+  // Reproducir el segundo video
+  const introVideo = document.getElementById('introVideo');
+
+  if (introVideo) {
+    introVideo.currentTime = 0;
+    introVideo.play().catch(() => {});
+  }
+
+  setTimeout(() => envelope?.remove(), 900);
+});
 }
 
 

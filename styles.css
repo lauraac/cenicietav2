@@ -1163,3 +1163,39 @@ body.envelope-open { overflow: hidden; }
     0 10px 30px rgba(0, 0, 0, .25),
     0 0 18px rgba(244, 198, 90, .12);
 }
+
+/* Footer discreto de contacto */
+
+.creator-footer {
+  padding: 30px 20px 35px;
+  text-align: center;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+
+  color: rgba(255, 255, 255, .45);
+
+  background: #061733;
+
+  border-top: 1px solid rgba(244, 198, 90, .12);
+}
+
+.creator-footer span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.creator-footer a {
+  color: rgba(244, 198, 90, .75);
+  text-decoration: none;
+
+  font-size: 12px;
+  letter-spacing: .04em;
+
+  transition: all .3s ease;
+}
+
+.creator-footer a:hover {
+  color: #f4c65a;
+  text-shadow: 0 0 10px rgba(244, 198, 90, .35);
+}
