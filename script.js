@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initRSVP();
   initCinderellaStars();
+
+  // Abrir TODAS las fotos del carrusel completas
+  initPhotoLightbox();
 });
 
 function initPersonalInvitation() {
@@ -384,4 +387,80 @@ function moveStar(star) {
 
   star.style.width =
     `${size}px`;
+}
+
+/* ==========================================
+   ABRIR FOTOS DEL CARRUSEL EN GRANDE
+========================================== */
+
+function initPhotoLightbox() {
+
+  const lightbox = document.getElementById('photoLightbox');
+  const lightboxImage = document.getElementById('photoLightboxImage');
+  const closeButton = document.getElementById('photoLightboxClose');
+
+  if (!lightbox || !lightboxImage) return;
+
+
+  // Busca TODAS las imágenes del carrusel
+  const photos = document.querySelectorAll(
+    '.carousel__track .slide img'
+  );
+
+
+  // Le pone el clic automáticamente a TODAS
+  photos.forEach(photo => {
+
+    photo.addEventListener('click', () => {
+
+      lightboxImage.src = photo.src;
+
+      lightboxImage.alt =
+        photo.alt || 'Recuerdo de María Luciana';
+
+      lightbox.classList.add('is-open');
+
+      document.body.style.overflow = 'hidden';
+
+    });
+
+  });
+
+
+  // Cerrar
+  function closeLightbox() {
+
+    lightbox.classList.remove('is-open');
+
+    document.body.style.overflow = '';
+
+  }
+
+
+  // Cerrar con la X
+  closeButton?.addEventListener(
+    'click',
+    closeLightbox
+  );
+
+
+  // Cerrar tocando el fondo
+  lightbox.addEventListener('click', (event) => {
+
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+
+  });
+
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', (event) => {
+
+    if (event.key === 'Escape') {
+      closeLightbox();
+    }
+
+  });
+
 }
