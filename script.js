@@ -16,9 +16,9 @@ const INVITATION = {
   passes: Math.min(20, Math.max(1, parseInt(invitationParams.get('pases') || '5', 10) || 5)),
   whatsapp: (invitationParams.get('wa') || '').replace(/\D/g, '').slice(0, 15)
 };
-
 document.addEventListener('DOMContentLoaded', () => {
   initPersonalInvitation();
+  initWelcomeVideo();
   initIntro();
   initMusic();
   initCountdown();
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initRSVP();
   initCinderellaStars();
 });
-
 
 function initPersonalInvitation() {
   const envelope = document.getElementById('royalEnvelope');
@@ -78,9 +77,44 @@ function initPersonalInvitation() {
 }
 
 
+// VIDEO DE LA PRIMERA TARJETA
+// Cualquier primer toque en la pantalla reproduce Amo.mp4
+function initWelcomeVideo() {
+
+  const video = document.getElementById('welcomeVideo');
+
+  if (!video) return;
+
+  let started = false;
+
+  const startVideo = async () => {
+
+    if (started) return;
+
+    try {
+      video.muted = false;
+      video.volume = 1;
+
+      await video.play();
+
+      started = true;
+
+    } catch (error) {
+      console.log('Esperando interacción para reproducir el video.');
+    }
+  };
+
+  // Cualquier toque en la pantalla
+  document.addEventListener('pointerdown', startVideo);
+}
+
+  // TODO LO DEMÁS QUE YA TIENES...
+
 function initIntro() {
   const intro = document.getElementById('intro');
   const video = document.getElementById('introVideo');
+
+  
   const enterBtn = document.getElementById('enterBtn');
   const hint = document.getElementById('audioHint');
   const introContent = document.querySelector('.intro__content');

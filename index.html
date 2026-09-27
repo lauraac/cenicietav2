@@ -27,22 +27,80 @@
 </head>
 <body>
   <!-- SOBRE MÁGICO PERSONALIZADO -->
-  <section class="royal-envelope" id="royalEnvelope" aria-label="Invitación personalizada">
-    <div class="royal-envelope__stars" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
-    <div class="royal-envelope__card">
-      <div class="royal-envelope__seal">L</div>
-      <p class="eyebrow">Una invitación especialmente para</p>
-      <h1 id="familyName">Familia Pérez</h1>
-      <p class="royal-envelope__copy">María Luciana ha reservado para ustedes</p>
-      <div class="royal-passes">
-        <span class="royal-passes__number" id="passCount">5</span>
-        <span class="royal-passes__label" id="passLabel">Pases Reales</span>
-      </div>
-      <div class="royal-tickets" id="royalTickets" aria-hidden="true"></div>
-      <p class="royal-envelope__note">Cada pase representa un lugar reservado para esta noche mágica.</p>
-      <button class="royal-envelope__button" id="openInvitationBtn" type="button">Abrir mi invitación ✨</button>
+ <section class="royal-envelope" id="royalEnvelope" aria-label="Invitación personalizada">
+
+  <div class="royal-envelope__stars" aria-hidden="true">
+    ✦ ✧ ✦ ✧ ✦
+  </div>
+
+  <div class="royal-envelope__card">
+
+    <div class="royal-envelope__seal">L</div>
+
+    <!-- VIDEO DE LA INVITACIÓN -->
+    <div class="royal-envelope__video">
+
+<video
+  id="welcomeVideo"
+  controls
+  playsinline
+  preload="auto"
+  poster="./img/portada-video.jpg">
+
+  <source
+    src="./img/Amo.mp4"
+    type="video/mp4">
+
+  Tu navegador no puede reproducir este video.
+
+</video>
+
     </div>
-  </section>
+
+    <p class="eyebrow">
+      Una invitación especialmente para
+    </p>
+
+    <h1 id="familyName">
+      Familia Pérez
+    </h1>
+
+    <p class="royal-envelope__copy">
+      María Luciana ha reservado para ustedes
+    </p>
+
+    <div class="royal-passes">
+      <span class="royal-passes__number" id="passCount">5</span>
+      <span class="royal-passes__label" id="passLabel">
+        Pases Reservados
+      </span>
+    </div>
+
+    <div
+      class="royal-tickets"
+      id="royalTickets"
+      aria-hidden="true">
+    </div>
+
+
+
+    <p class="royal-envelope__note">
+      Cada pase representa un lugar reservado
+      para esta noche mágica.
+    </p>
+
+    <button
+      class="royal-envelope__button"
+      id="openInvitationBtn"
+      type="button">
+
+      Abrir mi invitación ✨
+
+    </button>
+
+  </div>
+
+</section>
 
   <div class="sparkles" id="sparkles"></div>
 
