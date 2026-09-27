@@ -77,8 +77,6 @@ function initPersonalInvitation() {
 }
 
 
-// VIDEO DE LA PRIMERA TARJETA
-// Cualquier primer toque en la pantalla reproduce Amo.mp4
 function initWelcomeVideo() {
 
   const video = document.getElementById('welcomeVideo');
@@ -104,10 +102,23 @@ function initWelcomeVideo() {
     }
   };
 
-  // Cualquier toque en la pantalla
+  // Cualquier toque en la pantalla inicia el video
   document.addEventListener('pointerdown', startVideo);
-}
 
+
+  // ✨ CUANDO TERMINE EL VIDEO
+  video.addEventListener('ended', () => {
+
+    // Regresa al inicio para que vuelva a mostrar el poster
+    video.currentTime = 0;
+
+    // Fuerza al navegador a mostrar nuevamente la portada
+    video.load();
+
+    // Permitimos reproducirlo otra vez si lo desean
+    started = false;
+  });
+}
   // TODO LO DEMÁS QUE YA TIENES...
 
 function initIntro() {
