@@ -181,10 +181,9 @@ const introTextTimer = setInterval(() => {
       video.muted = false;
       video.volume = 1;
 
-      if (hint) {
-        hint.style.display = 'none';
-      }
-
+ if (hint) {
+  hint.classList.add('is-hidden');
+}
       await video.play();
     } catch {
       audioEnabled = false;

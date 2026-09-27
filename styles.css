@@ -2035,3 +2035,190 @@ body.envelope-open { overflow: hidden; }
 .audio-hint:active {
   transform: scale(.94) !important;
 }
+
+
+/* =========================================
+   BOTÓN TOCA PARA ESCUCHAR - CORREGIDO
+========================================= */
+
+.audio-hint {
+  position: absolute !important;
+
+  top: max(22px, env(safe-area-inset-top)) !important;
+  left: 50% !important;
+
+  z-index: 50 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px;
+
+  min-width: 210px;
+
+  padding: 13px 20px;
+
+  border: 1px solid rgba(244, 198, 90, .85);
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(8, 38, 82, .95),
+    rgba(38, 101, 170, .95)
+  );
+
+  color: white;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.35),
+    0 0 18px rgba(244,198,90,.35);
+
+  backdrop-filter: blur(10px);
+
+  animation: tocaEscuchar 1.7s ease-in-out infinite !important;
+}
+
+
+/* BRILLO QUE CRUZA */
+
+.audio-hint::before {
+  content: "";
+
+  position: absolute;
+
+  top: -50%;
+  left: -60%;
+
+  width: 40px;
+  height: 200%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.8),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  animation: brilloEscuchar 2.8s infinite;
+}
+
+
+/* BOCINA */
+
+.audio-hint__icon {
+  display: inline-block;
+
+  animation: bocinaEscuchar 1.2s ease-in-out infinite;
+}
+
+
+/* DEDITO */
+
+.audio-hint__tap {
+  display: inline-block;
+
+  font-size: 18px;
+
+  animation: dedoTocar 1s ease-in-out infinite;
+}
+
+
+/* IMPORTANTE:
+   mantiene translateX para que NO desaparezca */
+
+@keyframes tocaEscuchar {
+
+  0%, 100% {
+    transform:
+      translateX(-50%)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      scale(1.06);
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,.35),
+      0 0 25px rgba(244,198,90,.65);
+  }
+}
+
+
+@keyframes brilloEscuchar {
+
+  0%, 55% {
+    left: -60%;
+  }
+
+  85%, 100% {
+    left: 130%;
+  }
+}
+
+
+@keyframes bocinaEscuchar {
+
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+
+@keyframes dedoTocar {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(-4px);
+  }
+
+  65% {
+    transform: translateY(2px) scale(.9);
+  }
+}
+
+
+.audio-hint:active {
+  transform:
+    translateX(-50%)
+    scale(.94) !important;
+}
+
+
+/* Ocultar "Toca para escuchar" después de tocarlo */
+.audio-hint.is-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+
+  transform:
+    translateX(-50%)
+    scale(.85) !important;
+
+  transition:
+    opacity .5s ease,
+    transform .5s ease,
+    visibility .5s ease !important;
+
+  animation: none !important;
+}
