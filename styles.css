@@ -1146,3 +1146,20 @@ body.envelope-open { overflow: hidden; }
       0 0 24px rgba(255,215,120,.35);
   }
 }
+.admin-logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+
+  margin: 15px 0 28px;
+
+  border-radius: 18px;
+  object-fit: cover;
+
+  border: 1px solid rgba(244, 198, 90, .45);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .25),
+    0 0 18px rgba(244, 198, 90, .12);
+}
