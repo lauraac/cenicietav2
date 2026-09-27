@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f2b5f" />
+  <title>Mis XV - María Luciana</title>
+  <meta name="description" content="Invitación de XV años de Luciana inspirada en Cenicienta." />
+  <meta property="og:title" content="Mis XV - María Luciana ✨" />
+  <meta property="og:description" content="Acompáñame a vivir una noche mágica inspirada en Cenicienta." />
+  <meta property="og:title" content="Mis XV - María Luciana ✨" />
+<meta property="og:description" content="Acompáñame a vivir una noche mágica ✨" />
+
+<meta property="og:image" content="https://lauraac.github.io/cenicienta/img/portadaluci.jpg" />
+<meta property="og:image:secure_url" content="https://lauraac.github.io/cenicienta/img/portadaluci.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta property="og:url" content="https://lauraac.github.io/cenicienta/" />
+<meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- SOBRE MÁGICO PERSONALIZADO -->
+  <section class="royal-envelope" id="royalEnvelope" aria-label="Invitación personalizada">
+    <div class="royal-envelope__stars" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
+    <div class="royal-envelope__card">
+      <div class="royal-envelope__seal">L</div>
+      <p class="eyebrow">Una invitación especialmente para</p>
+      <h1 id="familyName">Familia Pérez</h1>
+      <p class="royal-envelope__copy">María Luciana ha reservado para ustedes</p>
+      <div class="royal-passes">
+        <span class="royal-passes__number" id="passCount">5</span>
+        <span class="royal-passes__label" id="passLabel">Pases Reales</span>
+      </div>
+      <div class="royal-tickets" id="royalTickets" aria-hidden="true"></div>
+      <p class="royal-envelope__note">Cada pase representa un lugar reservado para esta noche mágica.</p>
+      <button class="royal-envelope__button" id="openInvitationBtn" type="button">Abrir mi invitación ✨</button>
+    </div>
+  </section>
+
+  <div class="sparkles" id="sparkles"></div>
+
+  <!-- VIDEO DE INICIO -->
+  <div class="intro intro--waiting" id="intro">
+    <video
+      id="introVideo"
+      class="intro__video"
+      playsinline
+      muted
+      preload="metadata"
+      poster="./img/portada.jpg"
+    >
+      <source src="./img/intro.mp4" type="video/mp4" />
+    </video>
+
+    <div class="intro__shade"></div>
+
+    <button
+      class="audio-hint"
+      id="audioHint"
+      type="button">
+      🔊 Toca para escuchar
+    </button>
+
+    <div class="intro__content">
+      <p class="eyebrow">Érase una vez...</p>
+      <h1>María Luciana</h1>
+      <p class="intro__subtitle">Mis XV años</p>
+    </div>
+
+    <button
+      id="enterBtn"
+      class="enter-btn"
+      type="button">
+      Entrar al cuento ✨
+    </button>
+  </div>
+
+  <!-- BOTÓN DE MÚSICA -->
+  <button
+    class="music-btn"
+    id="musicBtn"
+    type="button"
+    aria-label="Reproducir música">
+    ♫
+  </button>
+
+  <audio id="bgMusic" loop preload="none">
+    <source src="./img/musicaa.mp3" type="audio/mpeg" />
+  </audio>
+
+  <main class="page-shell">
+
+    <!-- PORTADA PRINCIPAL -->
+    <section class="hero-image-section section-reveal" id="inicio">
+
+      <img
+        src="./img/portada10.png"
+        alt="Mis XV años de María Luciana"
+        class="hero-main-image"
+      />
+
+      <div class="hero-image-info">
+
+        <div class="date-chip">
+          <span>✨ Sábado 31 de octubre de 2026 ✨</span>
+          <span>6:30 p. m.</span>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#detalles" class="btn btn--primary">
+            Ver detalles
+          </a>
+
+          <a href="#confirmacion" class="btn btn--ghost">
+            Confirmar asistencia
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAPÁS -->
+    <section class="parents-image-section section-reveal">
+      <img
+        src="./img/padres.png"
+        alt="Padres de María Luciana"
+        class="parents-image"
+      />
+    </section>
+
+    <section class="section card section-reveal countdown-section">
+     <p class="eyebrow">El reloj ya comenzó</p>
+<h2 class="section-title">Falta muy poco</h2>
+<p class="event-date">
+  Sábado 31 de octubre de 2026 · 6:30 p. m.
+</p>
+      <div class="countdown" id="countdown">
+        <div><span id="days">00</span><small>Días</small></div>
+        <div><span id="hours">00</span><small>Horas</small></div>
+        <div><span id="minutes">00</span><small>Min</small></div>
+        <div><span id="seconds">00</span><small>Seg</small></div>
+      </div>
+    </section>
+
+    <section class="section story section-reveal">
+      <p class="eyebrow">Capítulo I</p>
+      <h2 class="section-title">Había una vez...</h2>
+      <div class="story__media ornate-frame">
+        <img src="./img/foto1.jpg" alt="Luciana de niña" />
+      </div>
+      <p>Una pequeña llena de sueños, sonrisas y momentos que fueron escribiendo una historia maravillosa.</p>
+    </section>
+
+    <section class="section section-reveal">
+      <p class="eyebrow">Su historia</p>
+      <h2 class="section-title">De niña a quinceañera</h2>
+      <div class="carousel" id="carousel">
+        <button class="carousel__btn carousel__btn--prev" id="prevBtn" aria-label="Anterior">‹</button>
+        <div class="carousel__viewport">
+          <div class="carousel__track" id="track">
+            <article class="slide"><img src="./img/foto5.png" alt="Recuerdo 1"><div><h3>Primeros sueños</h3><p>Donde comenzó una historia llena de ternura.</p></div></article>
+            <article class="slide"><img src="./img/foto2.jpg" alt="Recuerdo 2"><div><h3>Momentos mágicos</h3><p>Juegos, sonrisas y recuerdos que viven para siempre.</p></div></article>
+            <article class="slide"><img src="./img/foto3.jpg" alt="Recuerdo 3"><div><h3>Nuevos capítulos</h3><p>Cada año trajo nuevas aventuras y grandes sueños.</p></div></article>
+            <article class="slide"><img src="./img/foto4.jpg" alt="Recuerdo 4"><div><h3>Hoy</h3><p>Una nueva etapa comienza y queremos celebrarla contigo.</p></div></article>
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--next" id="nextBtn" aria-label="Siguiente">›</button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <section class="midnight-banner section-reveal">
+      <img src="./img/reloj.png" alt="Reloj de medianoche" onerror="this.style.display='none'" />
+      <div>
+        <p class="eyebrow">Antes de que el reloj marque las doce...</p>
+        <h2>Vive esta noche conmigo</h2>
+      </div>
+    </section>
+
+    <section class="section section-reveal" id="detalles">
+      <p class="eyebrow">Dónde comienza la magia</p>
+      <h2 class="section-title">Detalles del evento</h2>
+      <div class="event-grid">
+        <article class="event-card">
+          <span class="event-icon">⛪</span>
+          <h3>Ceremonia religiosa</h3>
+          <p class="event-name">Iglesia de Santa Ana</p>
+          <p>6:30 p. m.</p>
+          <a class="btn btn--small btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Iglesia+de+Santa+Ana" target="_blank" rel="noopener">Abrir en Maps</a>
+        </article>
+        <article class="event-card">
+          <span class="event-icon">🏰</span>
+          <h3>Recepción</h3>
+          <p class="event-name">Hotel El Español</p>
+          <p>Salón Tenerife · 9:00 p. m.</p>
+          <a class="btn btn--small btn--primary" href="https://www.google.com/maps/search/?api=1&query=Hotel+El+Español+Salon+Tenerife" target="_blank" rel="noopener">Abrir en Maps</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section carriage section-reveal">
+      <img src="./img/carruaje.png" alt="Carruaje de Cenicienta" onerror="this.style.display='none'" />
+      <div>
+<p class="eyebrow">Código de vestimenta</p>
+<h2 class="section-title">Elegante</h2>
+<p>Reserva el azul Cenicienta para la quinceañera. ✨</p>
+        <p>Reserva el azul Cenicienta para la quinceañera. ✨</p>
+      </div>
+    </section>
+    <section class="section gifts section-reveal">
+      <p class="eyebrow">Un detalle especial</p>
+      <h2 class="section-title">Lluvia de sobres</h2>
+      <div class="envelope">💌</div>
+      <p>Tu presencia es el regalo más importante. Si deseas tener un detalle conmigo, tendremos lluvia de sobres.</p>
+    </section>
+
+    <section class="section section-reveal" id="confirmacion">
+      <p class="eyebrow">Serás parte de mi cuento</p>
+      <h2 class="section-title">Confirma tu asistencia</h2>
+      <div class="reservation-card" id="reservationCard">
+        <span>👑 Invitación para</span>
+        <strong id="rsvpFamilyName">Familia Pérez</strong>
+        <small id="rsvpPassInfo">Tienen 5 lugares reservados</small>
+      </div>
+      <div class="simple-confirmation">
+        <button class="btn btn--primary btn--full" id="confirmWhatsappBtn" type="button">Confirmar asistencia ✨</button>
+        <p class="form-msg" id="formMsg">Al confirmar, se abrirá WhatsApp con tu invitación personalizada.</p>
+      </div>
+    </section>
+
+    <section class="finale section-reveal">
+      <div class="finale__overlay"></div>
+      <div class="finale__content">
+        <p class="eyebrow">Y entonces...</p>
+        <h2 class="script-title">La magia apenas comienza</h2>
+        <p>Gracias por formar parte de este momento tan especial.</p>
+        <strong>María Luciana · Mis XV años</strong>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

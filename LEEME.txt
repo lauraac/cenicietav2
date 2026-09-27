@@ -1,0 +1,25 @@
+INVITACIÓN XV - CENICIENTA / LUCIANA
+
+1. Abre esta carpeta en VS Code.
+2. Instala/usa Live Server.
+3. Clic derecho en index.html > Open with Live Server.
+
+ARCHIVOS QUE DEBES PONER EN /img
+- intro.mp4        -> video inicial vertical
+- musica.mp3       -> música de fondo
+- portada.jpg      -> portada/fondo final
+- castillo.png     -> castillo transparente
+- zapatilla.png    -> zapatilla de cristal PNG transparente
+- carruaje.png     -> carruaje PNG transparente
+- reloj.png        -> reloj PNG transparente
+- foto1.jpg
+- foto2.jpg
+- foto3.jpg
+- foto4.jpg
+
+IMPORTANTE
+- El sitio es MOBILE FIRST, pero NO bloquea escritorio.
+- En PC se centra y se ensancha para que puedas desarrollarlo cómodamente.
+- Cambia la fecha real en script.js > CONFIG.eventDate.
+- Los links de Maps son búsquedas genéricas. Cuando tengas los links exactos, sustitúyelos en index.html.
+- El formulario RSVP funciona visualmente como demo. Puedes conectarlo después a Google Apps Script / Sheets pegando la URL en script.js > CONFIG.rsvpScriptUrl.
