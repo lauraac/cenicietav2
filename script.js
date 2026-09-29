@@ -343,7 +343,7 @@ function initCinderellaStars() {
 
     const star = document.createElement("img");
 
-    star.src = "./img/estrellass.png";
+  star.src = "./img/brillo.png";
     star.className = "magic-star-img";
     star.alt = "";
 
