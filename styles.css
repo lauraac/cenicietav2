@@ -2222,3 +2222,340 @@ body.envelope-open { overflow: hidden; }
 
   animation: none !important;
 }
+/* ==========================================
+   💌 LLUVIA DE SOBRES - ESTILO CENICIENTA
+========================================== */
+
+.gift-envelope-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 470px;
+
+  margin: 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(231, 196, 108, .35);
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(130, 190, 255, .32),
+      transparent 35%
+    ),
+    linear-gradient(
+      160deg,
+      #143b73 0%,
+      #0a2550 50%,
+      #06162f 100%
+    );
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, .38),
+    inset 0 0 45px rgba(150, 210, 255, .06);
+}
+
+
+/* resplandor de fondo */
+
+.gift-envelope-section::before {
+  content: "";
+
+  position: absolute;
+  width: 270px;
+  height: 270px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(210, 235, 255, .20),
+      transparent 68%
+    );
+
+  top: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+
+/* contenido */
+
+.gift-envelope__content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 470px;
+
+  padding: 45px 25px;
+
+  text-align: center;
+}
+
+
+/* texto pequeño */
+
+.gift-envelope__eyebrow {
+  margin: 0 0 16px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+
+  text-transform: uppercase;
+  letter-spacing: .22em;
+
+  color: #f2d98f;
+}
+
+
+/* SOBRE */
+
+.gift-envelope__icon {
+  font-size: 68px;
+
+  margin-bottom: 5px;
+
+  animation: envelopeFloat 3s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 15px rgba(255,255,255,.25));
+}
+
+
+/* título */
+
+.gift-envelope__content h2 {
+  margin: 0;
+
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(55px, 12vw, 80px);
+  font-weight: 400;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,.65),
+    0 0 22px rgba(130,195,255,.40);
+}
+
+
+/* línea */
+
+.gift-envelope__line {
+  width: 110px;
+  height: 1px;
+
+  margin: 8px auto 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #e7c46c,
+      transparent
+    );
+}
+
+
+/* textos */
+
+.gift-envelope__content p {
+  margin: 7px 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: rgba(255,255,255,.86);
+}
+
+
+.gift-envelope__message {
+  max-width: 370px;
+  margin: 10px auto !important;
+}
+
+
+.gift-envelope__message strong {
+  color: #f2d98f;
+  font-weight: 600;
+}
+
+
+/* corazón */
+
+.gift-envelope__heart {
+  display: block;
+
+  margin-top: 18px;
+
+  font-size: 28px;
+
+  color: #e7c46c;
+
+  animation: giftHeart 2.5s ease-in-out infinite;
+}
+
+
+/* estrellas */
+
+.gift-envelope__sparkles {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+
+.gift-envelope__sparkles span {
+  position: absolute;
+
+  color: #fff3bd;
+
+  text-shadow:
+    0 0 8px white,
+    0 0 18px #d5eaff;
+
+  animation: giftSparkle 2.8s ease-in-out infinite;
+}
+
+
+.gift-envelope__sparkles span:nth-child(1) {
+  top: 14%;
+  left: 13%;
+  font-size: 20px;
+}
+
+
+.gift-envelope__sparkles span:nth-child(2) {
+  top: 27%;
+  right: 15%;
+  font-size: 15px;
+  animation-delay: .8s;
+}
+
+
+.gift-envelope__sparkles span:nth-child(3) {
+  bottom: 19%;
+  left: 20%;
+  font-size: 14px;
+  animation-delay: 1.4s;
+}
+
+
+.gift-envelope__sparkles span:nth-child(4) {
+  bottom: 13%;
+  right: 16%;
+  font-size: 19px;
+  animation-delay: 1.9s;
+}
+
+
+@keyframes envelopeFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+@keyframes giftSparkle {
+
+  0%,
+  100% {
+    opacity: .25;
+    transform: scale(.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+}
+
+
+@keyframes giftHeart {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .6;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+  .gift-envelope-section {
+    min-height: 440px;
+    border-radius: 23px;
+  }
+
+  .gift-envelope__content {
+    padding: 38px 22px;
+  }
+
+  .gift-envelope__content h2 {
+    font-size: 58px;
+  }
+
+}
+/* IMAGEN DEL SOBRE */
+.gift-envelope__image {
+  display: block;
+  width: min(220px, 70%);
+  margin: 0 auto 10px;
+  height: auto;
+
+  filter:
+    drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25))
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.18));
+
+  transform-origin: center;
+  animation: sobreFlotante 4s ease-in-out infinite;
+}
+
+/* Movimiento suave del sobre */
+@keyframes sobreFlotante {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter:
+      drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25))
+      drop-shadow(0 0 18px rgba(255, 255, 255, 0.18));
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.03);
+    filter:
+      drop-shadow(0 16px 30px rgba(0, 0, 0, 0.28))
+      drop-shadow(0 0 25px rgba(231, 196, 108, 0.25));
+  }
+}
