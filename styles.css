@@ -2559,3 +2559,108 @@ body.envelope-open { overflow: hidden; }
       drop-shadow(0 0 25px rgba(231, 196, 108, 0.25));
   }
 }
+
+.creator-footer {
+  width: 100%;
+  padding: 30px 20px;
+  background: #06152d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creator-footer__promo {
+  position: relative;
+  display: block;
+
+  /* 👇 MÁS PEQUEÑA */
+  width: 100%;
+  max-width: 650px;
+
+  overflow: hidden;
+  border-radius: 22px;
+
+  border: 1px solid rgba(218, 185, 105, 0.35);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(84, 150, 255, 0.12);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.creator-footer__image {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.creator-footer__promo:hover {
+  transform: translateY(-4px) scale(1.015);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(106, 169, 255, 0.22);
+}
+
+.creator-footer__promo:hover .creator-footer__image {
+  transform: scale(1.025);
+  filter: brightness(1.07);
+}
+
+
+/* ✨ BRILLO */
+.creator-footer__shine {
+  position: absolute;
+  top: -50%;
+  left: -80%;
+
+  width: 35%;
+  height: 200%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.5),
+    rgba(255,255,255,0.05),
+    transparent
+  );
+
+  transform: rotate(15deg);
+  animation: footerShine 4.5s infinite;
+
+  pointer-events: none;
+}
+
+@keyframes footerShine {
+  0%,
+  55% {
+    left: -80%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+
+
+/* 📱 CELULAR */
+@media (max-width: 600px) {
+
+  .creator-footer {
+    padding: 22px 18px 30px;
+  }
+
+  .creator-footer__promo {
+    max-width: 420px;
+    border-radius: 17px;
+  }
+}
